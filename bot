@@ -1,0 +1,27 @@
+IWebElement element2 = ((ISearchContext) driver).FindElement(By.XPath("//input[@id='uploadImageField']"));
+                element2.SendKeys(AppDomain.CurrentDomain.BaseDirectory + "resimler/" + str10);
+                Thread.Sleep(2000);
+                Program.ClearInput(element2, driver, "");
+                Thread.Sleep(500);
+              }
+              catch
+              {
+              }
+            }
+            Thread.Sleep(3000);
+          }
+ if (!((ISearchContext) driver).FindElement(By.XPath("//input[@id='autoPublishAuction']")).GetAttribute("class").Equals("sg-checkbox ng-valid ng-dirty ng-valid-parse ng-touched ng-not-empty"))
+ Sahibinden_Ilan_Bot.Selenium.JSClick(By.XPath("//input[@id='autoPublishAuction']"), driver);
+          Sahibinden_Ilan_Bot.Selenium.JSClick(By.XPath("//input[@id='postRulesCheck']"), driver);
+          Thread.Sleep(2000);
+          Sahibinden_Ilan_Bot.Selenium.JSClick(By.XPath("//button[@class='add-classified-submit btn btn-strong']"), driver);
+          Thread.Sleep(3000);
+          Sahibinden_Ilan_Bot.Selenium.JSClick(By.XPath("//button[.='Devam Et']"), driver);
+          Thread.Sleep(1000);
+          Sahibinden_Ilan_Bot.Selenium.JSClick(By.XPath("//button[.='Devam Et']"), driver);
+          Sahibinden_Ilan_Bot.Selenium.JSClick(By.XPath("/html/body/div[1]/div[1]/div[2]/main/div[1]/div[2]/div[1]/div[3]/div/a"), driver);
+          Sahibinden_Ilan_Bot.Selenium.JSClick(By.XPath("//button[.='Devam Et']"), driver);
+          Thread.Sleep(3000);
+          Log.Success("Ilan basariyla girildi: " + RowIndex.ToString());
+          Thread.Sleep(int.Parse(Helper.Setting("Bekleme")) * 1000);
+        }
